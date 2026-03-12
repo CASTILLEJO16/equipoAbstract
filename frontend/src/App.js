@@ -25,7 +25,7 @@ const restaurantes = [
   {
     id: 'chino',
     nombre: 'Restaurante Chino',
-    icono: '🥢',
+    icono: 'CH',
     color: '#E53935',
     descripcion: 'Auténtica cocina china tradicional',
     gradient: 'linear-gradient(135deg, #E53935 0%, #C62828 100%)'
@@ -33,7 +33,7 @@ const restaurantes = [
   {
     id: 'japones',
     nombre: 'Restaurante Japonés',
-    icono: '🍱',
+    icono: 'JP',
     color: '#43A047',
     descripcion: 'Exquisita cocina japonesa',
     gradient: 'linear-gradient(135deg, #43A047 0%, #2E7D32 100%)'
@@ -41,7 +41,7 @@ const restaurantes = [
   {
     id: 'mexicano',
     nombre: 'Restaurante Mexicano',
-    icono: '🌮',
+    icono: 'MX',
     color: '#FB8C00',
     descripcion: 'Sabrosa comida mexicana',
     gradient: 'linear-gradient(135deg, #FB8C00 0%, #EF6C00 100%)'
@@ -49,7 +49,7 @@ const restaurantes = [
   {
     id: 'italiano',
     nombre: 'Restaurante Italiano',
-    icono: '🍕',
+    icono: 'IT',
     color: '#D32F2F',
     descripcion: 'Clásica cocina italiana',
     gradient: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)'
@@ -57,7 +57,7 @@ const restaurantes = [
   {
     id: 'indio',
     nombre: 'Restaurante Indio',
-    icono: '🍛',
+    icono: 'IN',
     color: '#7B1FA2',
     descripcion: 'Aromática cocina india',
     gradient: 'linear-gradient(135deg, #7B1FA2 0%, #4A148C 100%)'

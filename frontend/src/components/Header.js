@@ -39,7 +39,7 @@ const Header = () => {
               boxShadow: '0 8px 16px rgba(25, 118, 210, 0.3)'
             }}
           >
-            🍽️
+            RS
           </Avatar>
           
           <Typography 

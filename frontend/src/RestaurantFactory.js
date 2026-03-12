@@ -41,7 +41,7 @@ class ChowMein extends PlatoFuerte {
   }
   
   servir() {
-    return "🍜 Sirviendo Chow Mein caliente con palillos chinos";
+    return "Sirviendo Chow Mein caliente con palillos chinos";
   }
 }
 
@@ -51,7 +51,7 @@ class TeJazmin extends Bebida {
   }
   
   servir() {
-    return "🍵 Sirviendo Té Jazmín caliente en taza de porcelana";
+    return "Sirviendo Té Jazmín caliente en taza de porcelana";
   }
 }
 
@@ -61,7 +61,7 @@ class RollitoDulce extends Postre {
   }
   
   servir() {
-    return "🍰 Sirviendo Rollito Dulce con nieve y sirope";
+    return "Sirviendo Rollito Dulce con nieve y sirope";
   }
 }
 
@@ -72,7 +72,7 @@ class Ramen extends PlatoFuerte {
   }
   
   servir() {
-    return "🍜 Sirviendo Ramen caliente en tazón tradicional";
+    return "Sirviendo Ramen caliente en tazón tradicional";
   }
 }
 
@@ -82,7 +82,7 @@ class Sake extends Bebida {
   }
   
   servir() {
-    return "🍶 Sirviendo Sake caliente en vasos pequeños";
+    return "Sirviendo Sake caliente en vasos pequeños";
   }
 }
 
@@ -92,7 +92,7 @@ class Dango extends Postre {
   }
   
   servir() {
-    return "🍡 Sirviendo Dango en brocheta con salsa dulce";
+    return "Sirviendo Dango en brocheta con salsa dulce";
   }
 }
 
@@ -103,7 +103,7 @@ class TacosCarneAsada extends PlatoFuerte {
   }
   
   servir() {
-    return "🌮 Sirviendo Tacos de Carne Asada con salsa picante";
+    return "Sirviendo Tacos de Carne Asada con salsa picante";
   }
 }
 
@@ -113,7 +113,7 @@ class AguaJamaica extends Bebida {
   }
   
   servir() {
-    return "🍹 Sirviendo Agua de Jamaica fría con limón";
+    return "Sirviendo Agua de Jamaica fría con limón";
   }
 }
 
@@ -123,7 +123,7 @@ class PastelTresLeches extends Postre {
   }
   
   servir() {
-    return "🍰 Sirviendo Pastel de Tres Leches con crema y fresa";
+    return "Sirviendo Pastel de Tres Leches con crema y fresa";
   }
 }
 
@@ -134,7 +134,7 @@ class Pizza extends PlatoFuerte {
   }
   
   servir() {
-    return "🍕 Sirviendo Pizza Margherita caliente del horno de leña";
+    return "Sirviendo Pizza Margherita caliente del horno de leña";
   }
 }
 
@@ -144,7 +144,7 @@ class Vino extends Bebida {
   }
   
   servir() {
-    return "🍷 Sirviendo Vino Tinto en copa de cristal a temperatura ambiente";
+    return "Sirviendo Vino Tinto en copa de cristal a temperatura ambiente";
   }
 }
 
@@ -154,7 +154,7 @@ class Tiramisu extends Postre {
   }
   
   servir() {
-    return "🍰 Sirviendo Tiramisú fresco con espolvoreado de cacao";
+    return "Sirviendo Tiramisú fresco con espolvoreado de cacao";
   }
 }
 
@@ -165,7 +165,7 @@ class Curry extends PlatoFuerte {
   }
   
   servir() {
-    return "🍛 Sirviendo Chicken Curry caliente con naan recién hecho";
+    return "Sirviendo Chicken Curry caliente con naan recién hecho";
   }
 }
 
@@ -175,7 +175,7 @@ class Lassi extends Bebida {
   }
   
   servir() {
-    return "🥤 Sirviendo Lassi de Mango frío en vaso alto";
+    return "Sirviendo Lassi de Mango frío en vaso alto";
   }
 }
 
@@ -185,7 +185,7 @@ class GulabJamun extends Postre {
   }
   
   servir() {
-    return "🍮 Sirviendo Gulab Jamun bañado en jarabe aromático";
+    return "Sirviendo Gulab Jamun bañado en jarabe aromático";
   }
 }
 

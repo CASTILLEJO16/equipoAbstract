@@ -1,0 +1,17 @@
+{
+  "name": "restaurant-abstract-factory",
+  "version": "1.0.0",
+  "description": "Sistema de Restaurantes - Patrón Abstract Factory en JavaScript",
+  "main": "backend/src/Cliente.js",
+  "scripts": {
+    "start": "node backend/src/Cliente.js",
+    "backend": "node backend/src/Cliente.js",
+    "frontend": "cd frontend && npm start",
+    "dev-backend": "node --watch backend/src/Cliente.js",
+    "install-all": "npm install && cd frontend && npm install"
+  },
+  "keywords": ["abstract-factory", "design-patterns", "restaurant", "javascript", "react"],
+  "author": "Equipo Abstract Factory",
+  "license": "MIT",
+  "type": "module"
+}

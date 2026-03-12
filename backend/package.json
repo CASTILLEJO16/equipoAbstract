@@ -1,0 +1,14 @@
+{
+  "name": "restaurant-abstract-factory-backend",
+  "version": "1.0.0",
+  "description": "Backend JavaScript para sistema de restaurantes con patrón Abstract Factory",
+  "main": "src/Cliente.js",
+  "scripts": {
+    "start": "node src/Cliente.js",
+    "dev": "node --watch src/Cliente.js"
+  },
+  "keywords": ["abstract-factory", "design-patterns", "restaurant", "javascript"],
+  "author": "Equipo Abstract Factory",
+  "license": "MIT",
+  "type": "module"
+}

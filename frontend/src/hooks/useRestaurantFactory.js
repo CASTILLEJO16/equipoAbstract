@@ -4,6 +4,7 @@ import { getFabrica } from '../RestaurantFactory';
 export const useRestaurantFactory = () => {
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
   const [menu, setMenu] = useState(null);
+  const [restaurantTheme, setRestaurantTheme] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -12,12 +13,13 @@ export const useRestaurantFactory = () => {
     setError(null);
     
     try {
-      const fabrica = getFabrica(restaurante.id);
+      const fabricaData = getFabrica(restaurante.id);
       
-      if (fabrica) {
-        const nuevoMenu = fabrica.crearMenu();
+      if (fabricaData.fabrica) {
+        const nuevoMenu = fabricaData.fabrica.crearMenu();
         setSelectedRestaurant(restaurante);
         setMenu(nuevoMenu);
+        setRestaurantTheme(fabricaData.theme);
       } else {
         setError('No se pudo crear la fábrica para este restaurante');
       }
@@ -31,6 +33,7 @@ export const useRestaurantFactory = () => {
   const reset = useCallback(() => {
     setSelectedRestaurant(null);
     setMenu(null);
+    setRestaurantTheme(null);
     setError(null);
     setLoading(false);
   }, []);
@@ -38,6 +41,7 @@ export const useRestaurantFactory = () => {
   return {
     selectedRestaurant,
     menu,
+    restaurantTheme,
     loading,
     error,
     selectRestaurant,

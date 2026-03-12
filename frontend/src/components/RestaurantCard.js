@@ -12,20 +12,24 @@ import {
 } from '@mui/icons-material';
 
 const RestaurantCard = ({ restaurante, onSelect, selected }) => {
+  const primaryColor = restaurante.color || restaurante.theme?.colors?.primary || '#dc2626';
+  const gradient = restaurante.gradient || restaurante.theme?.colors?.background || 'linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%)';
+  const icon = restaurante.icono || 'RS';
+
   return (
     <Card
       sx={{
         cursor: 'pointer',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
         transform: selected ? 'scale(1.05) translateY(-8px)' : 'scale(1) translateY(0)',
-        border: selected ? `3px solid ${restaurante.color}` : 'none',
-        background: selected ? restaurante.gradient : 'white',
+        border: selected ? `3px solid ${primaryColor}` : 'none',
+        background: selected ? gradient : 'white',
         color: selected ? 'white' : 'inherit',
         boxShadow: selected ? 8 : 2,
         '&:hover': {
           transform: selected ? 'scale(1.05) translateY(-8px)' : 'translateY(-8px)',
           boxShadow: 8,
-          background: restaurante.gradient,
+          background: gradient,
           color: 'white',
           '& .MuiChip-root': {
             backgroundColor: 'rgba(255, 255, 255, 0.2)',
@@ -53,7 +57,7 @@ const RestaurantCard = ({ restaurante, onSelect, selected }) => {
             filter: selected ? 'drop-shadow(0 4px 6px rgba(0,0,0,0.3))' : 'none'
           }}
         >
-          {restaurante.icono}
+          {icon}
         </Typography>
         <Typography 
           variant="h6" 

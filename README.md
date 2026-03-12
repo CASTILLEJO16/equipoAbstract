@@ -49,41 +49,7 @@ El patrón Abstract Factory es un patrón creacional que permite:
 
 ```
 equipo_abstract/
-├── backend/                      # Backend JavaScript
-│   ├── src/
-│   │   ├── PlatoFuerte.js       # Producto abstracto
-│   │   ├── Bebida.js            # Producto abstracto
-│   │   ├── Postre.js            # Producto abstracto
-│   │   ├── FabricaRestaurante.js # Fábrica abstracta
-│   │   ├── Menu.js              # Clase de soporte
-│   │   ├── Cliente.js           # Programa principal
-│   │   ├── china/               # Productos concretos chinos
-│   │   │   ├── ChowMein.js
-│   │   │   ├── TeJazmin.js
-│   │   │   └── RollitoDulce.js
-│   │   ├── japon/               # Productos concretos japoneses
-│   │   │   ├── Ramen.js
-│   │   │   ├── Sake.js
-│   │   │   └── Dango.js
-│   │   ├── mexico/              # Productos concretos mexicanos
-│   │   │   ├── TacosCarneAsada.js
-│   │   │   ├── AguaJamaica.js
-│   │   │   └── PastelTresLeches.js
-│   │   ├── italia/              # Productos concretos italianos
-│   │   │   ├── Pizza.js
-│   │   │   ├── Vino.js
-│   │   │   └── Tiramisu.js
-│   │   ├── india/               # Productos concretos indios
-│   │   │   ├── Curry.js
-│   │   │   ├── Lassi.js
-│   │   │   └── GulabJamun.js
-│   │   └── fabricas/           # Fábricas concretas
-│   │       ├── FabricaRestauranteChino.js
-│   │       ├── FabricaRestauranteJapones.js
-│   │       ├── FabricaRestauranteMexicano.js
-│   │       ├── FabricaRestauranteItaliano.js
-│   │       └── FabricaRestauranteIndio.js
-│   └── package.json            # Dependencias del backend
+├──
 ├── frontend/                     # Frontend React
 │   ├── public/
 │   │   ├── index.html          # HTML principal

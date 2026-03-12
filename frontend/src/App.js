@@ -1,211 +1,180 @@
-import React from 'react';
-import {
-  Container,
-  Grid,
-  Paper,
-  Box,
-  CircularProgress,
-  Alert,
-  Snackbar,
-  Fade,
-  Typography
-} from '@mui/material';
-import {
-  LocalDining,
-  LocalBar,
-  Cake
-} from '@mui/icons-material';
+import { Container, Grid, Typography, Box } from '@mui/material';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
 import MenuCard from './components/MenuCard';
-import PatternInfo from './components/PatternInfo';
 import { useRestaurantFactory } from './hooks/useRestaurantFactory';
+import { getRestaurantTheme } from './themes/RestaurantThemes';
 
-const restaurantes = [
+const RESTAURANTS = [
   {
-    id: 'chino',
-    nombre: 'Restaurante Chino',
-    icono: 'CH',
-    color: '#E53935',
-    descripcion: 'Auténtica cocina china tradicional',
-    gradient: 'linear-gradient(135deg, #E53935 0%, #C62828 100%)'
+    id: "chino",
+    nombre: "Cocina China Imperial",
+    descripcion: "TradiciÃ³n milenaria con sabores autÃ©nticos y tÃ©cnicas ancestrales",
+    imagen: "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=992&auto=format&fit=crop"
   },
   {
-    id: 'japones',
-    nombre: 'Restaurante Japonés',
-    icono: 'JP',
-    color: '#43A047',
-    descripcion: 'Exquisita cocina japonesa',
-    gradient: 'linear-gradient(135deg, #43A047 0%, #2E7D32 100%)'
+    id: "japones",
+    nombre: "Sabor JaponÃ©s",
+    descripcion: "ArmonÃ­a perfecta entre frescura y tradiciÃ³n en cada plato",
+    imagen: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=880&auto=format&fit=crop"
   },
   {
-    id: 'mexicano',
-    nombre: 'Restaurante Mexicano',
-    icono: 'MX',
-    color: '#FB8C00',
-    descripcion: 'Sabrosa comida mexicana',
-    gradient: 'linear-gradient(135deg, #FB8C00 0%, #EF6C00 100%)'
+    id: "mexicano",
+    nombre: "Sabores de MÃ©xico",
+    descripcion: "Especias vibrantes y tradiciones culinarias que celebran la vida",
+    imagen: "https://images.unsplash.com/photo-1707603571504-86c1ea50903e?q=80&w=687&auto=format&fit=crop"
   },
   {
-    id: 'italiano',
-    nombre: 'Restaurante Italiano',
-    icono: 'IT',
-    color: '#D32F2F',
-    descripcion: 'Clásica cocina italiana',
-    gradient: 'linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%)'
+    id: "italiano",
+    nombre: "Ristorante Italiano",
+    descripcion: "PasiÃ³n y tradiciÃ³n en cada pasta, como en la abuela de Nonna",
+    imagen: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=1469&auto=format&fit=crop"
   },
   {
-    id: 'indio',
-    nombre: 'Restaurante Indio',
-    icono: 'IN',
-    color: '#7B1FA2',
-    descripcion: 'Aromática cocina india',
-    gradient: 'linear-gradient(135deg, #7B1FA2 0%, #4A148C 100%)'
+    id: "indio",
+    nombre: "Aromas de la India",
+    descripcion: "Especias exÃ³ticas y sabores intensos que transportan a otro mundo",
+    imagen: "https://images.unsplash.com/photo-1631292784640-2b24be784d5d?q=80&w=880&auto=format&fit=crop"
   }
 ];
 
-function App() {
-  const { selectedRestaurant, menu, loading, error, selectRestaurant, reset } = useRestaurantFactory();
+const RESTAURANTS_WITH_THEME = RESTAURANTS.map((restaurante) => ({
+  ...restaurante,
+  theme: getRestaurantTheme(restaurante.id),
+}));
 
-  const handleCloseError = () => {
-    // Error se cierra automáticamente o al cambiar de restaurante
+function App() {
+  const { selectedRestaurant, menu, restaurantTheme, selectRestaurant, reset } = useRestaurantFactory();
+
+  const handleRestaurantSelect = (restaurante) => {
+    selectRestaurant(restaurante);
   };
 
-  if (loading) {
-    return (
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Header />
-        <Box display="flex" justifyContent="center" alignItems="center" minHeight="400px">
-          <Paper sx={{ p: 4, textAlign: 'center' }}>
-            <CircularProgress size={60} thickness={4} />
-            <Typography variant="h6" sx={{ mt: 2 }}>
-              Creando tu menú personalizado...
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Preparando los mejores platillos para ti
-            </Typography>
-          </Paper>
-        </Box>
-      </Container>
-    );
-  }
+  const handleBack = () => {
+    reset();
+  };
 
   return (
-    <>
-      <Header />
-      
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        {!menu ? (
-          /* Selección de Restaurante */
-          <Fade in={!menu} timeout={500}>
-            <Box>
-              <Box textAlign="center" mb={4}>
-                <Typography variant="h5" gutterBottom>
-                  � Selecciona un Restaurante
-                </Typography>
-                <Typography variant="body1" color="text.secondary">
-                  Elige el tipo de cocina que prefieres y nosotros crearemos un menú perfecto para ti
-                </Typography>
-              </Box>
+    <Box sx={{ 
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #FDF5E6 0%, #FFF8DC 50%, #FDF5E6 100%)',
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          opacity: 0.03,
+          backgroundImage: `radial-gradient(circle at 20% 20%, #dc2626 0%, transparent 50%), radial-gradient(circle at 80% 80%, #ea580c 0%, transparent 50%)`,
+          pointerEvents: 'none',
+        }
+      }}>
+        <Header 
+          selectedRestaurant={selectedRestaurant}
+          onBack={handleBack}
+        />
+        
+        <Container maxWidth="xl" sx={{ py: 4, position: 'relative', zIndex: 1 }}>
+          {!selectedRestaurant ? (
+            <>
+              <Typography 
+                variant="h3" 
+                component="h1" 
+                sx={{ 
+                  textAlign: 'center', 
+                  mb: 2,
+                  fontWeight: 800,
+                  fontSize: { xs: '2.5rem', md: '3.5rem' },
+                  color: '#2C1810',
+                  fontFamily: '"Playfair Display", serif',
+                  letterSpacing: '0.02em',
+                }}
+              >
+                Sabores del Mundo
+              </Typography>
+              <Typography 
+                variant="h6" 
+                sx={{ 
+                  textAlign: 'center', 
+                  mb: 6,
+                  color: '#5D4037',
+                  fontSize: { xs: '1.1rem', md: '1.3rem' },
+                  fontWeight: 500,
+                  maxWidth: '600px',
+                  mx: 'auto',
+                }}
+              >
+                Descubre cocinas internacionales con ingredientes autÃ©nticos y preparaciones artesanales
+              </Typography>
               
-              <Grid container spacing={3}>
-                {restaurantes.map((restaurante, index) => (
-                  <Grid item xs={12} sm={6} md={4} lg={12/5} key={restaurante.id}>
+              <Grid container spacing={4}>
+                {RESTAURANTS_WITH_THEME.map((restaurante) => (
+                  <Grid item xs={12} sm={6} md={4} key={restaurante.id}>
                     <RestaurantCard
                       restaurante={restaurante}
-                      onSelect={selectRestaurant}
-                      selected={selectedRestaurant?.id === restaurante.id}
+                      onSelect={handleRestaurantSelect}
+                      selected={false}
                     />
                   </Grid>
                 ))}
               </Grid>
-            </Box>
-          </Fade>
-        ) : (
-          /* Mostrar Menú */
-          <Fade in={!!menu} timeout={500}>
-            <Box>
-              {/* Header del Menú */}
-              <Paper sx={{ p: 3, mb: 4, backgroundColor: 'primary.main', color: 'white' }}>
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                  <Box>
-                    <Typography variant="h4" gutterBottom>
-                      {selectedRestaurant.icono} {selectedRestaurant.nombre}
-                    </Typography>
-                    <Typography variant="subtitle1">
-                      Menú Completo del Día - Preparado con ❤️
-                    </Typography>
-                  </Box>
-                  <Box
-                    component="button"
-                    onClick={reset}
-                    sx={{
-                      background: 'rgba(255, 255, 255, 0.2)',
-                      border: '1px solid white',
-                      color: 'white',
-                      padding: '8px 16px',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      '&:hover': {
-                        background: 'rgba(255, 255, 255, 0.3)'
-                      }
-                    }}
-                  >
-                    Cambiar Restaurante
-                  </Box>
-                </Box>
-              </Paper>
-
-              {/* Menú Detallado */}
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={4}>
-                  <MenuCard
-                    titulo="Plato Fuerte"
-                    icono={<LocalDining />}
-                    item={menu.getInfo().plato}
-                    color="#E53935"
-                    delay={0.1}
-                  />
+            </>
+          ) : (
+            <>
+              <Typography 
+                variant="h3" 
+                component="h2" 
+                sx={{ 
+                  textAlign: 'center', 
+                  mb: 6,
+                  fontWeight: 800,
+                  fontSize: { xs: '2rem', md: '2.5rem' },
+                  color: restaurantTheme?.colors.text.primary || '#2C1810',
+                  fontFamily: restaurantTheme?.typography.fontFamily || '"Playfair Display", serif',
+                }}
+              >
+                MenÃº {selectedRestaurant.nombre}
+              </Typography>
+              
+              {menu && (
+                <Grid container spacing={4}>
+                  <Grid item xs={12} md={8}>
+                    <MenuCard
+                      item={menu.getInfo().plato}
+                      tipo="platoFuerte"
+                      restauranteId={selectedRestaurant.id}
+                      theme={restaurantTheme}
+                      isFeatured={true}
+                    />
+                  </Grid>
+                  
+                  <Grid item xs={12} md={4}>
+                    <MenuCard
+                      item={menu.getInfo().bebida}
+                      tipo="bebida"
+                      restauranteId={selectedRestaurant.id}
+                      theme={restaurantTheme}
+                      isFeatured={false}
+                    />
+                  </Grid>
+                  
+                  <Grid item xs={12} md={6}>
+                    <MenuCard
+                      item={menu.getInfo().postre}
+                      tipo="postre"
+                      restauranteId={selectedRestaurant.id}
+                      theme={restaurantTheme}
+                      isFeatured={false}
+                    />
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} md={4}>
-                  <MenuCard
-                    titulo="Bebida"
-                    icono={<LocalBar />}
-                    item={menu.getInfo().bebida}
-                    color="#1E88E5"
-                    delay={0.2}
-                  />
-                </Grid>
-                <Grid item xs={12} md={4}>
-                  <MenuCard
-                    titulo="Postre"
-                    icono={<Cake />}
-                    item={menu.getInfo().postre}
-                    color="#8E24AA"
-                    delay={0.3}
-                  />
-                </Grid>
-              </Grid>
-
-              {/* Información del Patrón */}
-              <PatternInfo />
-            </Box>
-          </Fade>
-        )}
-
-        {/* Snackbar para errores */}
-        <Snackbar
-          open={!!error}
-          autoHideDuration={6000}
-          onClose={handleCloseError}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        >
-          <Alert severity="error" onClose={handleCloseError}>
-            {error}
-          </Alert>
-        </Snackbar>
-      </Container>
-    </>
+              )}
+            </>
+          )}
+        </Container>
+    </Box>
   );
 }
 

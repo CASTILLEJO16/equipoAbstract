@@ -7,6 +7,6 @@ export class TacosCarneAsada extends PlatoFuerte {
   }
   
   servir() {
-    console.log("🌮 Sirviendo Tacos de Carne Asada con salsa picante");
+    console.log("Sirviendo Tacos de Carne Asada con salsa picante");
   }
 }

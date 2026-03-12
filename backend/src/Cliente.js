@@ -15,12 +15,12 @@ class Cliente {
   }
 
   async iniciar() {
-    console.log("🍽️  SISTEMA DE RESTAURANTES - ABSTRACT FACTORY 🍽️");
+    console.log("SISTEMA DE RESTAURANTES - ABSTRACT FACTORY");
     console.log("================================================");
     console.log();
 
     // El cliente elige el restaurante
-    const opcion = await this.pregunta("Seleccione el tipo de restaurante:\n1. Chino 🥢\n2. Japonés 🍱\n3. Mexicano 🌮\n4. Italiano 🍕\n5. Indio 🍛\nIngrese su opción (1-5): ");
+    const opcion = await this.pregunta("Seleccione el tipo de restaurante:\n1. Chino\n2. Japonés\n3. Mexicano\n4. Italiano\n5. Indio\nIngrese su opción (1-5): ");
     
     let fabrica = null;
     let nombreRestaurante = "";
@@ -29,23 +29,23 @@ class Cliente {
     switch (opcion) {
       case "1":
         fabrica = new FabricaRestauranteChino();
-        nombreRestaurante = "🥢 RESTAURANTE CHINO SELECCIONADO";
+        nombreRestaurante = "RESTAURANTE CHINO SELECCIONADO";
         break;
       case "2":
         fabrica = new FabricaRestauranteJapones();
-        nombreRestaurante = "🍱 RESTAURANTE JAPONÉS SELECCIONADO";
+        nombreRestaurante = "RESTAURANTE JAPONÉS SELECCIONADO";
         break;
       case "3":
         fabrica = new FabricaRestauranteMexicano();
-        nombreRestaurante = "🌮 RESTAURANTE MEXICANO SELECCIONADO";
+        nombreRestaurante = "RESTAURANTE MEXICANO SELECCIONADO";
         break;
       case "4":
         fabrica = new FabricaRestauranteItaliano();
-        nombreRestaurante = "🍕 RESTAURANTE ITALIANO SELECCIONADO";
+        nombreRestaurante = "RESTAURANTE ITALIANO SELECCIONADO";
         break;
       case "5":
         fabrica = new FabricaRestauranteIndio();
-        nombreRestaurante = "🍛 RESTAURANTE INDIO SELECCIONADO";
+        nombreRestaurante = "RESTAURANTE INDIO SELECCIONADO";
         break;
       default:
         console.log("Opción no válida. Saliendo del programa.");
@@ -56,15 +56,15 @@ class Cliente {
     console.log(`\n${nombreRestaurante}`);
 
     // El cliente crea el menú usando la fábrica (sin saber qué cocina es)
-    console.log("\n📋 CREANDO MENÚ...");
+    console.log("\nCREANDO MENÚ...");
     const menu = fabrica.crearMenu();
 
     // Se sirve el menú completo
-    console.log("\n🍽️  SIRVIENDO MENÚ COMPLETO:");
+    console.log("\nSIRVIENDO MENÚ COMPLETO:");
     menu.servirMenu();
 
     // Demostración de la flexibilidad del patrón
-    console.log("\n💡 BENEFICIO DEL PATRÓN:");
+    console.log("\nBENEFICIO DEL PATRÓN:");
     console.log("El cliente trabajó con interfaces abstractas sin conocer");
     console.log("los detalles concretos de cada cocina.");
     console.log("Para agregar una nueva cocina, solo se necesita:");
@@ -86,7 +86,7 @@ class Cliente {
 
   // Método adicional para demostrar cómo cambiar de fábrica dinámicamente
   probarDiferentesFabricas() {
-    console.log("\n🔄 DEMOSTRACIÓN DE MÚLTIPLES FÁBRICAS:");
+    console.log("\nDEMOSTRACIÓN DE MÚLTIPLES FÁBRICAS:");
     
     const fabricas = [
       new FabricaRestauranteChino(),

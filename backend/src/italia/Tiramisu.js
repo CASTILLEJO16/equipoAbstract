@@ -7,6 +7,6 @@ export class Tiramisu extends Postre {
   }
   
   servir() {
-    console.log("🍰 Sirviendo Tiramisú fresco con espolvoreado de cacao");
+    console.log("Sirviendo Tiramisú fresco con espolvoreado de cacao");
   }
 }

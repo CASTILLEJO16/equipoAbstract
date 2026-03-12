@@ -7,6 +7,6 @@ export class AguaJamaica extends Bebida {
   }
   
   servir() {
-    console.log("🍹 Sirviendo Agua de Jamaica fría con limón");
+    console.log("Sirviendo Agua de Jamaica fría con limón");
   }
 }

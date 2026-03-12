@@ -7,6 +7,6 @@ export class Sake extends Bebida {
   }
   
   servir() {
-    console.log("🍶 Sirviendo Sake caliente en vasos pequeños");
+    console.log("Sirviendo Sake caliente en vasos pequeños");
   }
 }

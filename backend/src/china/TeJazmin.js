@@ -7,6 +7,6 @@ export class TeJazmin extends Bebida {
   }
   
   servir() {
-    console.log("🍵 Sirviendo Té Jazmín caliente en taza de porcelana");
+    console.log("Sirviendo Té Jazmín caliente en taza de porcelana");
   }
 }

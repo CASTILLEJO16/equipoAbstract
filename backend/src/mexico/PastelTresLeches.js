@@ -7,6 +7,6 @@ export class PastelTresLeches extends Postre {
   }
   
   servir() {
-    console.log("🍰 Sirviendo Pastel de Tres Leches con crema y fresa");
+    console.log("Sirviendo Pastel de Tres Leches con crema y fresa");
   }
 }

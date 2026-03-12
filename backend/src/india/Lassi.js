@@ -7,6 +7,6 @@ export class Lassi extends Bebida {
   }
   
   servir() {
-    console.log("🥤 Sirviendo Lassi de Mango frío en vaso alto");
+    console.log("Sirviendo Lassi de Mango frío en vaso alto");
   }
 }

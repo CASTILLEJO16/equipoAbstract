@@ -7,6 +7,6 @@ export class Ramen extends PlatoFuerte {
   }
   
   servir() {
-    console.log("🍜 Sirviendo Ramen caliente en tazón tradicional");
+    console.log("Sirviendo Ramen caliente en tazón tradicional");
   }
 }

@@ -7,6 +7,6 @@ export class Pizza extends PlatoFuerte {
   }
   
   servir() {
-    console.log("🍕 Sirviendo Pizza Margherita caliente del horno de leña");
+    console.log("Sirviendo Pizza Margherita caliente del horno de leña");
   }
 }

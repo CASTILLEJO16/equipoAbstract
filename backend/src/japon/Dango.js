@@ -7,6 +7,6 @@ export class Dango extends Postre {
   }
   
   servir() {
-    console.log("🍡 Sirviendo Dango en brocheta con salsa dulce");
+    console.log("Sirviendo Dango en brocheta con salsa dulce");
   }
 }

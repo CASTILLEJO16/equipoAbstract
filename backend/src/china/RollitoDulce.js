@@ -7,6 +7,6 @@ export class RollitoDulce extends Postre {
   }
   
   servir() {
-    console.log("🍰 Sirviendo Rollito Dulce con nieve y sirope");
+    console.log("Sirviendo Rollito Dulce con nieve y sirope");
   }
 }

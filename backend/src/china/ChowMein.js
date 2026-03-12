@@ -7,6 +7,6 @@ export class ChowMein extends PlatoFuerte {
   }
   
   servir() {
-    console.log("🍜 Sirviendo Chow Mein caliente con palillos chinos");
+    console.log("Sirviendo Chow Mein caliente con palillos chinos");
   }
 }

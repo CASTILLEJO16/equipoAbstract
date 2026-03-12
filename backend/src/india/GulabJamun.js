@@ -7,6 +7,6 @@ export class GulabJamun extends Postre {
   }
   
   servir() {
-    console.log("🍮 Sirviendo Gulab Jamun bañado en jarabe aromático");
+    console.log("Sirviendo Gulab Jamun bañado en jarabe aromático");
   }
 }

@@ -7,6 +7,6 @@ export class Curry extends PlatoFuerte {
   }
   
   servir() {
-    console.log("🍛 Sirviendo Chicken Curry caliente con naan recién hecho");
+    console.log("Sirviendo Chicken Curry caliente con naan recién hecho");
   }
 }

@@ -7,6 +7,6 @@ export class Vino extends Bebida {
   }
   
   servir() {
-    console.log("🍷 Sirviendo Vino Tinto en copa de cristal a temperatura ambiente");
+    console.log("Sirviendo Vino Tinto en copa de cristal a temperatura ambiente");
   }
 }

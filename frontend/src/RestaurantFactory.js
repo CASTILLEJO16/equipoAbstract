@@ -1,4 +1,6 @@
 // Base de datos de imágenes y descripciones sensoriales
+import { getRestaurantTheme } from './themes/RestaurantThemes';
+
 const MenuData = {
   chino: {
     platoFuerte: {
@@ -133,7 +135,6 @@ const MenuData = {
 };
 
 // Implementación del patrón Abstract Factory en JavaScript
-import { getRestaurantTheme } from './themes/RestaurantThemes';
 
 // Productos Abstractos
 class PlatoFuerte {
